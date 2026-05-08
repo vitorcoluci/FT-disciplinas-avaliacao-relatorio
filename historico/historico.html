@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Desenvolvimento do processo de avaliação de disciplinas (março/2021) – Avaliação de disciplnas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-79108a0fc1995748cbd19a5b0e3e3e7c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-adb83c838d67dc2d307358709ec46a8f.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Avaliação de disciplnas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../comissao/comissao.html"> 
+<span class="menu-text">Comissão</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../historico/historico.html" aria-current="page"> 
+<span class="menu-text">Histórico</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../metodologia/metodologia.html"> 
+<span class="menu-text">Metodologia</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../analise/analise.html"> 
+<span class="menu-text">Análise</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../recomendacoes/recomendacoes.html"> 
+<span class="menu-text">Recomendações</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#o-processo-de-avaliação" id="toc-o-processo-de-avaliação" class="nav-link" data-scroll-target="#o-processo-de-avaliação">O processo de avaliação</a></li>
+  <li><a href="#desenvolvimento-do-instrumento-de-avaliação" id="toc-desenvolvimento-do-instrumento-de-avaliação" class="nav-link" data-scroll-target="#desenvolvimento-do-instrumento-de-avaliação">Desenvolvimento do Instrumento de Avaliação</a></li>
+  <li><a href="#modelo-dos-itens-escolhidos-para-o-instrumento" id="toc-modelo-dos-itens-escolhidos-para-o-instrumento" class="nav-link" data-scroll-target="#modelo-dos-itens-escolhidos-para-o-instrumento">Modelo dos itens escolhidos para o instrumento</a></li>
+  <li><a href="#considerações-finais" id="toc-considerações-finais" class="nav-link" data-scroll-target="#considerações-finais">Considerações Finais</a></li>
+  <li><a href="#índice-x" id="toc-índice-x" class="nav-link" data-scroll-target="#índice-x">Índice <span class="math inline">\(X\)</span></a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Desenvolvimento do processo de avaliação de disciplinas (março/2021)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Transcrevemos aqui o relatório que descreve a implementação do instrumento de avaliação das disciplinas da FT. O relatório foi elaborado pela comissão instituída pela Portaria 28/19, no dia 17 de setembro de 2019, formado pelo Prof.&nbsp;Dr.&nbsp;Felippe Benavente Canteras (Presidente), Profa. Dra. Gisele Busichia Baioco, Profa. Dra. Marta Siviero Guilherme Pires, Profa. Dra. Simone Andrea Pozza, Profa. Dra. Talía Simões dos Santos Ximenes, e Prof.&nbsp;Dr.&nbsp;Vitor Rafael Coluci.</p>
+<hr>
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>A designação dos membros da Comissão ocorreu através da Portaria 28/19, no dia 17 de setembro de 2019, com o intuito de se criar uma forma de avaliação unificada das disciplinas de todos os cursos da Faculdade de Tecnologia (FT). O modelo anteriormente utilizado pela unidade era um questionário para avaliação da prática docente, vinculado ao extinto Programa de Avaliação da Graduação (PAG). Atualmente, a avaliação do docente pelo aluno é opcional, ficando a critério do docente, aplicar esse tipo de avaliação nas suas turmas. Além disso, o resultado dessa avaliação geralmente não é compartilhado com as coordenações dos cursos. A adoção de um instrumento único para toda a FT em que os alunos avaliam a prática docente facilita a adaptação dos alunos com a ferramenta de análise e permite que professores, coordenadores e direção identifiquem tendências e proponham ações de acordo com os resultados constatados nos processos. Ao longo do tempo, no entanto, pode ser identificada a necessidade de incorporar no instrumento avaliativo aspectos específicos de cada curso, podendo ser considerada a inclusão de um subconjunto de itens específicos ou perguntas abertas que contemplem essas especificidades. O trabalho desenvolvido pela comissão foi realizado em 6 etapas:</p>
+<ol type="1">
+<li><p>Levantamento e estudo de modelos de avaliação já existentes na própria FT, nos demais institutos e faculdades da Unicamp e em outras instituições de ensino superior, bem como de literatura relacionada ao tema;</p></li>
+<li><p>Desenvolvimento de um instrumento simplificado preliminar que pudesse fornecer os principais indicadores qualitativos das disciplinas;</p></li>
+<li><p>Apresentação da versão preliminar do instrumento avaliativo para as Comissões de Graduação de todos os cursos da FT, com a finalidade de tornar públicos os trabalhos desta comissão e de coletar sugestões de melhoria da forma de avaliação proposta. A ferramenta avaliativa foi discutida nas CGs em duas oportunidades, sendo a primeira em fevereiro de 2020. Nesta ocasião os membros apresentaram diversas sugestões, a partir das quais alterações foram realizadas na ferramenta. Uma nova versão foi apresentada às CGs no mês de novembro de 2020, sendo novamente avaliada. Desta vez, a ferramenta de avaliação apresentada atendeu a maioria das necessidades indicadas pelas comissões de graduação.</p></li>
+<li><p>Apresentação da versão preliminar do instrumento avaliativo para a Comissão de Pós Graduação da FT, que também teve a oportunidade de sugerir melhorias. A versão apresentada também foi considerada satisfatória nas discussões realizadas na CPG. Considerou-se, portanto, que a ferramenta desenvolvida poderá também ser utilizada para a avaliação das disciplinas oferecidas pelo Programa de Pós-graduação da FT.</p></li>
+<li><p>AvaliaçãoValidação da ferramenta de avaliação de disciplinas junto a alunos de graduação e pós graduação, para que também pudessem sugerir melhorias e mudanças na ferramenta. O retorno obtido pela comissão também foi muito positivo perante aos alunos, que incentivaram a ideia da adoção de uma avaliação institucional para todos os cursos e disciplinas oferecidas pela FT</p></li>
+<li><p>Consolidação da versão final e entrega para apreciação da Direção e da Congregação da FT.</p></li>
+</ol>
+</section>
+<section id="o-processo-de-avaliação" class="level1">
+<h1>O processo de avaliação</h1>
+<p>Os processos de ensino e aprendizagem são mais eficientes quando construídos através de interações e trocas de experiências e conhecimentos entre alunos e professores, sendo clara a responsabilidade compartilhada pelos resultados obtidos entre os agentes envolvidos. A avaliação da atividade docente pelos alunos é uma forma de se verificar como o processo de ensino e aprendizagem está ocorrendo. Essa avaliação não deve ser o único mecanismo de aferição do processo de ensino e aprendizagem ou da prática pedagógica do docente. É necessário aliar instrumentos complementares, como a autoavaliação do docente e de seus pares [1]. No entanto, a falta de um instrumento de avaliação do docente pelo aluno pode levar a situações injustas, principalmente quando essa avaliação é considerada em análises de promoções na carreira docente [2].</p>
+<p>Os itens de um instrumento de avaliação devem ser baseados na eficiência do ensino e outras informações que se busca sobre o curso ou sobre a abordagem do ensino. Além disso, segundo Dillman [3], um instrumento de avaliação “deve ser interessante, curto, não exigir grandes esforços físicos e mentais para ser respondido e oferecer uma sensação de relevância e importância para as respostas oferecidas”. A avaliação dos alunos normalmente aborda suas percepções sobre o curso, os métodos de ensino, o professor e a interação com a classe. Os itens comumente abordados nos instrumentos de avaliação são [4]:</p>
+<ul>
+<li>pontualidade;</li>
+<li>organização de conteúdo;</li>
+<li>métodos de ensino;</li>
+<li>didática;</li>
+<li>exames, métodos de classificação e critérios;</li>
+<li>rapidez e qualidade do feedback;</li>
+<li>interações e relacionamento entre alunos e professores (em grupo e individualmente);</li>
+<li>motivação e dedicação do professor;</li>
+<li>acessibilidade do professor fora da aula;</li>
+<li>valor do curso para os alunos em termos de aprendizagem;</li>
+<li>autoavaliação discente.</li>
+</ul>
+<p>Escalas do tipo Likert são usadas com mais frequência nesses instrumentos [4], sendo que a maioria inclui aproximadamente 15 a 20 afirmações objetivas sobre o curso e o professor. Essas afirmações são avaliadas em uma escala de 5 pontos, com o resultado mais favorável emparelhado com o maior valor numérico na escala. O menor valor numérico na escala Likert é mais comumente associada à resposta menos favorável ou pior, e a mais favorável ou a melhor resposta é comumente associada com o valor mais alto, por exemplo, “discordo totalmente” = 1 e “concordo totalmente” = 5, com raros casos em que o menor valor numérico é associado à resposta mais favorável. A escala geralmente concentra a avaliação numérica mais baixa do lado esquerdo, que vai aumentando até o valor mais alto, posicionado à direita da escala (em caso de alternativas, inicia-se com a menor escala). Afirmações sobre os temas mencionados e usando escala Likert são, por exemplo, encontradas no questionário do Estudante do ENADE [5].</p>
+<p>Além de itens com a escala Likert, perguntas também podem ser incluídas para que o aluno expresse sua opinião. Os comentários dos alunos fornecem feedback valioso sobre os diferentes aspectos do curso e os métodos de ensino que podem ser melhorados. Chulkov e Van Alstine [6] sugerem que os instrumentos devem incluir perguntas abertas sobre pontos específicos e não apenas um espaço em branco para comentários como, por exemplo:</p>
+<ul>
+<li>Qual aspecto deste curso você mudaria?</li>
+<li>Quais foram os pontos fortes deste professor?</li>
+<li>Que mudanças esse professor pode fazer para ser mais eficaz?</li>
+</ul>
+<p>Além disso, se as perguntas abertas estiverem localizadas em uma seção separada do instrumento (por exemplo, no final) em vez de intercaladas com as afirmações, o tamanho e o número de comentários aumentam [6]. As percepções dos alunos sobre os itens em instrumentos que avaliam a prática docente são diferentes das interpretações dos professores e gestores, e isso enfatiza a necessidade de “validar” o instrumento com os alunos antes que um formulário seja de fato aplicado. Peres-Dos-Santos e Laros descreve como é o processo de construção e validação de um instrumento para que os alunos forneçam dados para serem usados na avaliação da prática pedagógica do professor de ensino superior, no contexto da sala de aula [7].</p>
+</section>
+<section id="desenvolvimento-do-instrumento-de-avaliação" class="level1">
+<h1>Desenvolvimento do Instrumento de Avaliação</h1>
+<p>O desenvolvimento e a validação de um instrumento de avaliação podem levar anos, mesmo para especialistas. Portanto, decidimos nos basear em trabalhos referentes a instrumentos já desenvolvidos e testados [3,4,7-10] para propor um instrumento com 19 itens (17 afirmações e 2 questões abertas). A seguir, apresentamos a proposta deste instrumento e da forma de coletar, de analisar e de relatar os dados.<br>
+Optamos por apresentar os dados em forma de relatórios individuais (por professor/turma) para os professores, além de um relatório global para os coordenadores e direção, que podem ser disponibilizados eventualmente para comissões de avaliação internas e externas. Esses relatórios conteriam os dados brutos, mas de forma organizada, similarmente como era no extinto relatório fornecido pelo PAG. Nenhuma nota ou conceito é atribuído ao professor. Ficará a cargo do próprio professor (para a melhoria de suas práticas), do coordenador e, eventualmente, do parecerista RAD, uma análise mais profunda e uma atribuição de alguma métrica (quantitativa ou qualitativa) para embasar seus pareceres, se necessário.</p>
+<p>Em trabalho de síntese de um conjunto grande de trabalhos sobre a percepção dos alunos sobre o processo de ensino e sobre a prática pedagógica, Feldman [11] identificou 5 características de um bom professor e de uma boa prática de ensino: 1) estímulo ao interesse pelos assuntos da disciplina, 2) clareza e capacidade de se fazer entender; 3) conhecimento do assunto, 4) preparação e organização da disciplina; 5) entusiasmo para ensinar de forma geral e para ensinar os assuntos específicos da disciplina. Os itens do instrumento aqui proposto contemplam essas características, permitindo assim identificar os bons professores e as boas práticas pedagógicas. A sugestão para operacionalização da aplicação deste instrumento se encontra descrito no Anexo A deste documento.</p>
+</section>
+<section id="modelo-dos-itens-escolhidos-para-o-instrumento" class="level1">
+<h1>Modelo dos itens escolhidos para o instrumento</h1>
+<p>Escala Likert para todos os itens, que terão a seguinte ordem de aparecimento:</p>
+<ul>
+<li>discordo totalmente (1)</li>
+<li>discordo parcialmente (2)</li>
+<li>indiferente (3)</li>
+<li>concordo parcialmente (4)</li>
+<li>concordo totalmente (5)</li>
+<li>não consigo avaliar/não se aplica (0)</li>
+</ul>
+<p>O preenchimento do questionário será realizado de forma anônima. Os itens de 1 a 17 são afirmações que deverão ser classificadas pelos alunos segundo a escala Likert. Os itens 18 e 19 permitem aos alunos registrar suas opiniões e sugestões na forma de texto.</p>
+<ol type="1">
+<li><p>A infraestrutura da sala de aula (iluminação, ventilação, projetor, lousa, carteiras etc) estava apropriada para o desenvolvimento da disciplina.</p></li>
+<li><p>A infraestrutura dos laboratórios (iluminação, ventilação, bancadas, mesas, experimentos, utensílios de laboratório, computadores etc) estava apropriada para o desenvolvimento da disciplina.</p></li>
+<li><p>Materiais didáticos disponibilizados e indicados pelo professor como livros, manuais, vídeos e tutoriais eram de fácil acesso.</p></li>
+<li><p>O monitor PAD ajudou-me durante a disciplina.</p></li>
+<li><p>O estagiário PED ajudou-me durante a disciplina.</p></li>
+<li><p>As aulas sempre começaram e terminaram em horários que não prejudicaram o desenvolvimento do conteúdo.</p></li>
+<li><p>As aulas foram planejadas e os conteúdos abordados estavam organizados.</p></li>
+<li><p>Os métodos de ensino, as técnicas e atividades didáticas utilizados na disciplina facilitaram minha aprendizagem.</p></li>
+<li><p>Compreendi as explicações feitas pelo professor.</p></li>
+<li><p>O conteúdo apresentado em aula continha tanto os aspectos básicos como exemplos mais aprofundados.</p></li>
+<li><p>As avaliações de aprendizagem da disciplina foram coerentes.</p></li>
+<li><p>Entendi os critérios para aprovação na disciplina apresentados no início da disciplina.</p></li>
+<li><p>Recebi os resultados das avaliações (provas, testes, relatórios, projetos, etc) em um prazo adequado para que eu pudesse avaliar meu desempenho, tirar dúvidas e me preparar para as próximas avaliações.</p></li>
+<li><p>A interação entre os alunos e o professor na sala de aula assegurou um processo de ensino e aprendizagem de qualidade.</p></li>
+<li><p>A participação e expressão de ideias foram estimuladas durante as aulas.</p></li>
+<li><p>Consegui contatar o professor fora do horário da aula para tirar dúvidas.</p></li>
+<li><p>Empenhei-me nos estudos para essa disciplina.</p></li>
+<li><p>Comente os principais aspectos positivos da disciplina.</p></li>
+<li><p>Indique algumas sugestões para a melhoria da disciplina.</p></li>
+</ol>
+</section>
+<section id="considerações-finais" class="level1">
+<h1>Considerações Finais</h1>
+<p>Esta comissão entende que o instrumento desenvolvido aborda de forma simples e objetiva os principais aspectos relacionados às boas práticas pedagógicas, bem como possibilita a identificação de problemas pontuais e estruturais relacionados ao ensino de graduação e pós-graduação. É importante frisar que a melhoria contínua das práticas pedagógicas é o principal objetivo da aplicação desta ferramenta avaliativa, conforme já dito anteriormente e, para tal, precisa da colaboração e do envolvimento de toda a comunidade da FT. O sucesso desta empreitada passa pelo envolvimento da diretoria, das coordenações, professores, funcionários e principalmente dos alunos, sem os quais não será possível levantar dados consistentes que representem as percepções da maioria.</p>
+<p>Vale destacar ainda a fundamental importância na ação das Coordenações de Graduação e de Pós Graduação para que os objetivos de melhoria contínua de ensino e aprendizagem sejam atingidos. Após a aplicação do instrumento e a disponibilização dos resultados, caberá às coordenações de graduação as ações para que possamos atingir tal melhoria. É importante o reconhecimento e incentivo aos professores que apresentarem um bom desempenho nas avaliações, bem como procurar entender e corrigir os motivos de avaliações não tão satisfatórias. A ação da direção é também exigida, principalmente no que diz respeito às melhorias de infraestrutura que deverão ser apontadas pelos alunos. É fundamental compreender que a participação dos alunos será motivada pelas melhorias observadas ao longo dos semestres, valorizando assim a ferramenta desenvolvida como uma forma eficaz de promover alterações positivas nos cursos. Desta forma, além da ação de direção e coordenações, o empenho individual dos docentes se faz fundamental, entendendo o feedback fornecido pela avaliação de forma construtiva, procurando adaptar e melhorar técnicas pedagógicas.</p>
+<p>Ressalta-se também que esta ferramenta de avaliação poderá e deverá sofrer melhorias e adaptações contínuas, à medida em que novas necessidades pedagógicas forem percebidas e apontadas pelos usuários do sistema, pelas coordenações e professores. Tendo em vista o exposto, consideramos finalizada a elaboração da proposta da Ferramenta de Avaliação Institucional de Disciplinas da Faculdade de Tecnologia, a qual encaminhamos para a direção da Faculdade de Tecnologia na presente data. Sugere-se que agora a direção faça o encaminhamento necessário para a utilização de tal ferramenta em âmbito institucional, passando pela aprovação nas instâncias competentes da unidade.</p>
+</section>
+<section id="índice-x" class="level1">
+<h1>Índice <span class="math inline">\(X\)</span></h1>
+<p>Além do relatório de cada turma, pode-se calcular um índice geral da FT (e também por curso), <span class="math inline">\(X\)</span>. O valor de <span class="math inline">\(X\)</span> varia de 0 a 1 e seria calculado por</p>
+<p><span class="math inline">\(X = (S/N - 1)/4\)</span></p>
+<p>onde <span class="math inline">\(S\)</span> = soma de todas as respostas daquele semestre (incluindo todas as turmas e alunos) e <span class="math inline">\(N\)</span> = número total de respostas válidas (desconsiderando as respostas com a opção “não consigo avaliar/ não se aplica”).</p>
+<p>Por exemplo, se tivermos 16 mil respostas válidas “concordo totalmente” então <span class="math inline">\(S\)</span>= 16000 <span class="math inline">\(\times\)</span> 5 = 80000, <span class="math inline">\(N\)</span>= 16 mil e <span class="math inline">\(X\)</span> = 1, o que equivale a uma infraestrutura adequada, professor motivado, organizado, empenhado, didático e aluno dedicado, ou seja, o caso ideal. Por outro lado, o pior dos casos, teríamos 16 mil respostas válidas com “discordo totalmente” resultaria em <span class="math inline">\(S\)</span>= 16000 <span class="math inline">\(\times\)</span> 1 = 16000, <span class="math inline">\(N\)</span>= 16000 e <span class="math inline">\(X\)</span> = 0. Num outro caso, com 16 mil respostas, sendo 4 mil “concordo totalmente”, 6 mil “concordo parcialmente”, 3 mil “discordo parcialmente” e 3 mil “não consigo avaliar/não se aplica” teríamos então <span class="math inline">\(N\)</span>=13 mil (16-3) e <span class="math inline">\(X\)</span>=((4 mil <span class="math inline">\(\times\)</span> 5 + 6 mil <span class="math inline">\(\times\)</span> 4 + 3 mil <span class="math inline">\(\times\)</span> 2)/13 mil - 1)/4 = 0,71.</p>
+<p>Esse índice geral (ou por curso) seria um indicador para os gestores e também um <em>feedback</em> aos alunos dos questionários, sem expor os docentes. A análise ao longo dos semestres deste índice permite também avaliar resultados de práticas e ações implementadas pelas coordenações.</p>
+</section>
+<section id="referências" class="level1">
+<h1>Referências</h1>
+<p>[1] R. B. Paixao, B. C. de Almeida (2016), Avaliação docente pelo discente: análise das percepções de utilização ideal e efetiva, Meta: Avaliação, v. 8, n.&nbsp;22, p.48-68. http://dx.doi.org/10.22347/2175-2753v8i22.794</p>
+<p>[2] M. Hildebrand (1972), How to Recommend Promotion for a Mediocre Teacher without Actually Lying, The Journal of Higher Education, 43:1, 44-62 DOI: 10.1080/00221546.1972.11774927</p>
+<p>[3] Dillman, D. A. Mail and internet surveys: the tailored design method. (2000) 2.ed. New York: John Wiley &amp; Sons.</p>
+<p>[4] Busch, M. A.; Rushton, S.; Conklin, J. L.; Oermann, M. H. (2018) Considerations for Developing a Student Evaluation of Teaching Form. Teaching and Learning in Nursing. v. 13, 125-128. https://doi.org/10.1016/j.teln.2017.10.002</p>
+<p>[5] Ministério da Educação. Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira – INEP. Questionário do Estudante. Disponível em: http://inep.gov.br/questionario-do-estudante</p>
+<p>[6] Chulkov, D.V. and Van Alstine, J. (2012), “Challenges in designing student teaching evaluations in a business program”, International Journal of Educational Management, Vol. 26 No 2, pp.&nbsp;162-174. https://doi.org/10.1108/09513541211201979</p>
+<p>[7] L. F. B. Peres-Dos-Santos, J. A. Laros (2007), Avaliação da prática pedagógica do professor de Ensino Superior, Estudos em Avaliação Educacional, 75-95 v. 18, n.&nbsp;36. http://publicacoes.fcc.org.br/ojs/index.php/eae/article/view/2101</p>
+<p>[8] Hildebrand, M., &amp; Wilson, R. (1970). Effective university teaching and its evaluation. Washington, DC: Department of Health, Education, and Welfare, Office of Education. https://files.eric.ed.gov/fulltext/ED039860.pdf</p>
+<p>[9] Hildebrand, J., Wilson, R. C., and Dienst, E. R. (1971). Evaluating University Teaching. Berkeley, Calif.: Center for Research and Development in Higher Education, University of California, Berkeley. https://files.eric.ed.gov/fulltext/ED057748.pdf</p>
+<p>[10] Marsh, H. W. (1982) SEEQ: a reliable, valid, and useful instrument for collecting students’ evaluation of university teaching. British Journal of Educational Psychology, v.52, p.77-95, https://onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8279.1982.tb02505.x</p>
+<p>[11] Feldman, K.A. (1976) The superior college teacher from the students’ view. Res High Educ 5, 243–288 https://doi.org/10.1007/BF00991967</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Avaliação de disciplinas/2026 - FT/UNICAMP/Limeira</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
